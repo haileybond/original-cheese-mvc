@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="${title}"></title>
+</head>
+<body>
+    <h1 th:text="${title}"></h1>
+    <p th:unless="${cheeses} and ${cheeses.size()}">No cheeses in this list.</p>
+    <a href="/cheese/add">Add Cheese</a>
+    <ul>
+        <!-- repeat the element for each cheese in cheese, and tell Thymeleaf what we want it to do with it: insert it -->
+        <li th:each="cheese : ${cheeses}" th:text="${cheese}"></li>
+    </ul>
+</body>
+</html>
